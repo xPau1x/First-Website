@@ -1,0 +1,217 @@
+/* Global */
+
+
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "Itim";
+    --main: #531294ff;
+    --second: #37026cff;
+    --third: #0588A6;
+
+}
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+* { 
+    margin: 0;
+    padding: 0;
+    border: none;
+    
+}
+a {
+    color: var(--main);
+    text-decoration: none;
+}
+
+
+/* Navigation */
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    height: 75px;
+    z-index: 11;
+}
+svg {
+    margin: 18px 60px;
+}
+.links {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin: 0 60px;
+    gap: 50px;
+    font-size: 1.3rem;
+}
+.links>a {
+    text-decoration: none;
+    transition: text-decoration 1s linear;
+    padding: 100% 10px;
+}
+.links>a:hover, .drop-anchor>a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 7px;
+}
+.drop-anchor {
+    position: relative;
+}
+.drop-anchor>a {
+    padding: 100% 10px;
+}
+.drop-list {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    z-index: 9;
+    margin-top: 24px;
+    animation: drop-fade .4s ease forwards;
+}
+.drop-list * {
+    width: 180px;
+    height: 60px;
+    margin-left: -50px;
+    text-align: center;
+    padding-top: 14px;
+    background-color: white;
+    transition: background-color .2s;
+    
+}
+.drop-list *:hover {
+    background-color: #afe2ee;
+}
+.drop-anchor:hover .drop-list {
+    display: flex;
+}
+@keyframes drop-fade {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+
+/* Sections */
+
+
+.s1{
+    position: relative;
+    width: 100%;
+    min-height: 650px;
+    background-image: url("HeaderImg.jpg");
+    background-position: center-left;
+    background-attachment: fixed ;
+    background-color: #00000050;
+    background-blend-mode: overlay;
+
+    z-index: 5;
+}
+.head {
+    position: absolute;
+    width: 500px;
+    font-family: 'Lilita One';
+    font-size: 3rem;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    top: 215px;
+    right: 23vw;
+    animation: c-left 1s ease forwards;
+    animation-delay: 1s;
+    visibility:hidden;
+    opacity: 0;
+    z-index: 7;
+}
+@keyframes c-left {
+    0% {visibility:visible;}
+    2% {right: 23vw; opacity: 0}
+    100% {right: 57vw; opacity: 1; visibility:visible;}
+}
+#circles {
+    position: relative;
+    transform:scale(2.2);
+    left: 40vw;
+    top: 187px;
+    animation: c-right 1s ease forwards;
+    animation-delay: 1s;
+    z-index: 6;
+}
+@keyframes c-right {
+    0% {left: 40vw;}
+    100% {left: 60vw;}
+}
+
+
+
+.s2 {
+    width: 100%;
+    height: 500px;
+    
+}
+
+.test li {
+    list-style-type: none;
+    top:20px;
+}
+
+
+
+
+/* Animations */
+
+.s13 {
+    width: 100%;
+    min-height: 800px;
+    background-color: rgb(236, 212, 167);
+}
+
+#layer3 {
+    animation: c3 .3s;
+    animation-fill-mode: forwards;
+    transform-origin: center;
+    transform-box: fill-box;
+    animation-delay: 0.4s;
+    animation-timing-function: cubic-bezier(.59,.36,.43,1.38);
+}
+#layer2 {
+    animation: c2 .4s;
+    animation-fill-mode: forwards;
+    transform-origin: center;
+    transform-box: fill-box;
+    animation-delay: 0.2s;
+    animation-timing-function: cubic-bezier(.59,.36,.43,1.38);
+}
+#layer1 {
+    animation: c1 .5s;
+    animation-fill-mode: forwards;
+    transform-origin: center;
+    transform-box: fill-box;
+    animation-timing-function: cubic-bezier(.59,.36,.43,1.38);
+}
+@keyframes c3 {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(27);
+    }
+}
+@keyframes c2 {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(22);
+    }
+}   
+@keyframes c1 {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(15);
+    }
+}      
